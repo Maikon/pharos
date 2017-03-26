@@ -13,7 +13,9 @@
   color: black;
   float: left;
   padding: 1.5em;
-  margin: 11%;
+  padding-right: 5em;
+  padding-left: 5em;
+  margin: 13%;
   border-radius: 5px;
 }
 
@@ -28,4 +30,12 @@ a:active, a:focus {
 section h4 {
   font-size: 3em;
   font-family: 'Cinzel', serif;
+}
+
+.left_menu, .right_menu {
+  width: 50%;
+}
+
+.left_menu, .right_menu {
+  float: left;
 }
