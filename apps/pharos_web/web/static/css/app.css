@@ -32,6 +32,10 @@ section h4 {
   font-family: 'Cinzel', serif;
 }
 
+textarea {
+  vertical-align: top;
+}
+
 .left_menu, .right_menu {
   width: 50%;
 }
