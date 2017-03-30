@@ -15,8 +15,10 @@ defmodule PharosWeb.Router do
 
   scope "/", PharosWeb do
     pipe_through :browser # Use the default browser stack
-
     get "/", PageController, :index
+    get "/post", PostController, :new
+    post "/post", PostController, :create
+    get "/all_posts", PostController, :show_all
   end
 
   # Other scopes may use custom stacks.
