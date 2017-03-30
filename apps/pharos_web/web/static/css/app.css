@@ -4,7 +4,6 @@
   width: 100%;
   height: 100%;
   position: relative;
-  /* text-align: center; */
   margin: 0 auto;
 }
 
@@ -32,14 +31,26 @@ section h4 {
   font-family: 'Cinzel', serif;
 }
 
-textarea {
-  vertical-align: top;
-}
-
 .left_menu, .right_menu {
   width: 50%;
 }
 
 .left_menu, .right_menu {
   float: left;
+}
+
+textarea {
+  vertical-align: top;
+}
+
+.topic {
+  font-family: 'Alegreya', serif;
+  font-size: 1.5em;
+  padding-top: 1.5em;
+  border-bottom: 1px solid #EED;
+}
+
+.topic-heading {
+  padding: 1em 0;
+  border-bottom: 1px solid #EED;
 }

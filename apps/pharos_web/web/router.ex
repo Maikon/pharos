@@ -14,15 +14,13 @@ defmodule PharosWeb.Router do
   end
 
   scope "/", PharosWeb do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
+
     get "/", PageController, :index
     get "/post", PostController, :new
     post "/post", PostController, :create
     get "/all_posts", PostController, :show_all
+    get "/search", SearchController, :index
+    post "/search", SearchController, :search
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PharosWeb do
-  #   pipe_through :api
-  # end
 end
