@@ -1,19 +1,12 @@
 # PostService
 
-**TODO: Add description**
+The post service calls the db_service to save and retrieve posts.
 
-## Installation
+For more information:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `post_service` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:post_service, "~> 0.1.0"}]
-end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/post_service](https://hexdocs.pm/post_service).
-
+cd pharos/apps/post_service
+iex -S mix
+h(PostService.create)
+h(PostService.all)
+```

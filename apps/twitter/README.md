@@ -1,19 +1,21 @@
 # Twitter
 
-**TODO: Add description**
+A module named `Search` needs to be implemented which fulfils the following contract:
 
-## Installation
+```
+@spec for_topic(map) :: list(%Result{})
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `twitter` to your list of dependencies in `mix.exs`:
+For example:
 
-```elixir
-def deps do
-  [{:twitter, "~> 0.1.0"}]
-end
+iex> Search.for_topic(%{topic: "pizza", amount: 1})
+iex> [
+%{__struct__: Result,
+  description: "actual tweet content",
+  link: "link-to-tweet",
+  title: "chosen title",
+  source: "twitter"}
+ ]
+
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/twitter](https://hexdocs.pm/twitter).
 
