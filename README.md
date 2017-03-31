@@ -1,6 +1,6 @@
 # Pharos
 
-[CircleCI](https://circleci.com/gh/Maikon/pharos/tree/master.svg?style=svg&circle-token=a4d49e8162a9981b4c65745351cf027c85cde4f9)](https://circleci.com/gh/Maikon/pharos/tree/master)
+[![CircleCI](https://circleci.com/gh/Maikon/pharos/tree/master.svg?style=svg&circle-token=a4d49e8162a9981b4c65745351cf027c85cde4f9)](https://circleci.com/gh/Maikon/pharos/tree/master)
 
 Welcome to the Pharos Application.
 
