@@ -9,8 +9,8 @@ defmodule PostService do
   """
   @spec create(String.t, String.t) :: struct
   def create(new_post, description) do
-    DbService.persist("post", %{:post_url => new_post,
-                                :description => description})
+    DbService.persist(%{:post_url => new_post,
+                        :description => description})
   end
 
   @doc """
