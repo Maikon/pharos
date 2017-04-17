@@ -40,7 +40,8 @@ defmodule PharosWeb.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:post_service, in_umbrella: true},
-      {:memory_db, in_umbrella: true}
+      {:memory_db, in_umbrella: true},
+      {:twitter, in_umbrella: true}
     ]
   end
 end

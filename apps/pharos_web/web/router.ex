@@ -19,7 +19,6 @@ defmodule PharosWeb.Router do
     get "/", PageController, :index
     get "/post", PostController, :new
     post "/post", PostController, :create
-    get "/all_posts", PostController, :show_all
     get "/search", SearchController, :index
     post "/search", SearchController, :search
   end
