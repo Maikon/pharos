@@ -9,30 +9,30 @@ Welcome to the Pharos Application.
 You need to have Elixir 1.4 installed, and postgres
 
 Clone the repository
-> git clone git@github.com:Maikon/pharos.git
+> `git clone git@github.com:Maikon/pharos.git`
 
 Navigate to the root directory
-> cd pharos
+> `cd pharos`
 
 Install dependencies
-> mix deps.get
+> `mix deps.get`
 
 Compile the code
-> mix compile
+> `mix compile`
 
 Build the database (dev env)
-> mix ecto.create
-> mix ecto.migrate
+> `mix ecto.create`
+> `mix ecto.migrate`
 
 Build the database (test env)
-> MIX_ENV=test mix ecto.create
-> MIX_ENV=test mix ecto.migrate
+> `MIX_ENV=test mix ecto.create`
+> `MIX_ENV=test mix ecto.migrate`
 
 Run the tests
-> mix test
+> `mix test`
 
 Start the server locally
-> mix phoenix.server
+> `mix phoenix.server`
 
 Navigate to a supported url
 > https://localhost:4000/posts
@@ -42,9 +42,9 @@ Navigate to a supported url
 Before running the application:
 
 Copy the `.env-example` to `.env`
-> cp .env-example .env
+> `cp .env-example .env`
 
 Add the keys you require for the api you are using. Some example twitter keys are in place as an example.
 
 Source the .env file
-> source(.env)
+> `source .env`
