@@ -8,10 +8,9 @@ defmodule PharosWeb.SearchController do
   end
 
   def search(conn, query) do
-    search = Application.get_env(:pharos_web, :search)
+    results = Twitter.Search.execute(query)
 
-    search.execute(query)
-
+    MemoryDb.store(query["topic"], results)
     redirect conn, to: search_path(conn, :index)
   end
 end
