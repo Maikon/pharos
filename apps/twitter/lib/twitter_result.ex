@@ -1,4 +1,4 @@
-defmodule Result do
+defmodule Twitter.Result do
   defstruct [
     :title,
     :description,
