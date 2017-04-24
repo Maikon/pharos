@@ -15,6 +15,7 @@ config :pharos_web, PharosWeb.Endpoint,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
                     cd: Path.expand("../", __DIR__)]]
 
+config :pharos_web, ecto_repos: []
 
 # Watch static and templates for browser reloading.
 config :pharos_web, PharosWeb.Endpoint,

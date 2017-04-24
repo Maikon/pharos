@@ -16,6 +16,8 @@ config :pharos_web, PharosWeb.Endpoint,
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json"
 
+config :pharos_web, ecto_repos: []
+
 # Do not print debug messages in production
 config :logger, level: :info
 
