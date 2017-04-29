@@ -6,7 +6,7 @@
     <input type="text" name="topic" placeholder="pizza"/>
 
     <label for="amount">Amount</label>
-    <input type="text" name="amount" placeholder="3"/>
+    <input type="text" name="amount" placeholder="3" pattern="[0-9]"/>
 
     <button type="submit">Search</button>
   </form>
