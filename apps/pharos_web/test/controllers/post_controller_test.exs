@@ -19,6 +19,6 @@ defmodule PharosWeb.PostControllerTest do
     post conn, "/post", url: "another-post-url", description: "another-description"
     conn = get conn, "/post"
 
-    assert html_response(conn, 200) =~ "Link:</strong> another-post-url"
+    assert html_response(conn, 200) =~ "another-post-url"
   end
 end
