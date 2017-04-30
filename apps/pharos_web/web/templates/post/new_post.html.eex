@@ -13,7 +13,8 @@
 <%= for posts <- @all_posts do %>
   <section class="topic">
     <p>
-    <strong>Link:</strong> <%= posts.name%>
+      <strong>Link:</strong>
+      <a href="<%= posts.name %>" target="_blank"><%= posts.name %></a>
     </p>
     <p>
     <strong>Description:</strong> <%= posts.description%>
