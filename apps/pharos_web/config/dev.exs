@@ -6,6 +6,9 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
+config :pharos_web, parent_node: :"faros@127.0.0.1"
+config :pharos_web, wiki_node: :"wiki@127.0.0.1"
+
 
 config :pharos_web, PharosWeb.Endpoint,
   http: [port: 4040],

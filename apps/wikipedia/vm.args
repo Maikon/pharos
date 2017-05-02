@@ -1,0 +1,5 @@
+-name wiki@ec2-52-90-138-254.compute-1.amazonaws.com
+-setcookie s3kr3t
+-kernel inet_dist_listen_min 9100 inet_dist_listen_max 9155
+-config wiki.config
+
