@@ -11,7 +11,7 @@ defmodule PharosWeb.SearchController do
   end
 
   def search(conn, query) do
-    results = Twitter.Search.execute(query)
+    results = Twitter.Search.for_topic(query)
 
     redirect conn, to: search_path(conn, :index)
   end
