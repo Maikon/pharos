@@ -1,18 +1,15 @@
 defmodule DemoAgent do
-  @moduledoc """
-  Documentation for DemoAgent.
-  """
 
-  @doc """
-  Hello world.
+  def start_link do
+    state = []
+    Agent.start_link(fn -> state end, name: __MODULE__)
+  end
 
-  ## Examples
+  def store(item) do
+    Agent.update(__MODULE__, fn(state) -> state ++ [item] end)
+  end
 
-      iex> DemoAgent.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def all do
+    Agent.get(__MODULE__, fn(state) -> state end)
   end
 end
