@@ -7,16 +7,10 @@ defmodule PharosWeb.SearchController do
   end
 
   def search(conn, query) do
-    query_params = %{topic: query["topic"], amount: String.to_integer(query["amount"])}
+    search = Application.get_env(:pharos_web, :search)
 
-    all_results =
-      Enum.map(
-               [Wikipedia.Search, Twitter.Search],
-               fn(search_service) -> search_service.for_topic(query_params) end
-             )
+    search.execute(query)
 
-      results = List.flatten(all_results)
-      MemoryDb.store(query_params[:topic], results)
-      redirect conn, to: search_path(conn, :index)
+    redirect conn, to: search_path(conn, :index)
   end
 end

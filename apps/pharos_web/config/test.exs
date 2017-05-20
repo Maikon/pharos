@@ -10,3 +10,4 @@ config :pharos_web, ecto_repos: []
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+config :pharos_web, search: Core.FakeSearch

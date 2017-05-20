@@ -20,6 +20,7 @@ config :pharos_web, ecto_repos: []
 
 # Do not print debug messages in production
 config :logger, level: :info
+config :pharos_web, search: Core.RealSearch
 
 # ## SSL Support
 #
