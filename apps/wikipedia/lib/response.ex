@@ -1,4 +1,4 @@
-defmodule Response do
+defmodule Wikipedia.Response do
 
   def convert({:ok, %HTTPoison.Response{body: body, status_code: _status_code}}) do
     body
@@ -18,7 +18,7 @@ defmodule Response do
   end
 
   defp create_struct({title, description, link}) do
-    %Result{title: title, description: description, link: link, source: 'wikipedia'}
+    %Wikipedia.Result{title: title, description: description, link: link, source: 'wikipedia'}
   end
 end
 
