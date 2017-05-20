@@ -1,8 +1,16 @@
 defmodule Wikipedia.Search do
 
-  # the format of the query will be: %{topic: "pizza", amount: 5}
-  # The method returns a list of results in the format %Result{title: title, description: "text", link: link}
-  def for_topic(%{topic: topic, amount: amount}) do
-    Wikipedia.WikiClient.search_for(topic, amount)
-  end
+  @doc """
+  Wikipedia.Search takes a topic and searches for a specific number of results using the Wikipedia API.
+
+  ## Examples
+      iex> Wikipedia.Search.for_topic(%{topic: "pizza", amount: 1"})
+      [%Wikipedia.Result{description: "Pizza is a yeasted flatbread typically topped with tomato sauce and cheese and baked in an oven. It is commonly topped with a selection of meats, vegetables and condiments.",
+       link: "https://en.wikipedia.org/wiki/Pizza",
+       source: 'wikipedia', title: "Pizza"}]
+    """
+    @spec for_topic(%{topic: String.T, amount: Integer}) :: [Wikipedia.Result]
+    def for_topic(%{topic: topic, amount: amount}) do
+      Wikipedia.WikiClient.search_for(topic, amount)
+    end
 end
