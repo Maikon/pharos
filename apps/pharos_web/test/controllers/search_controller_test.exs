@@ -12,11 +12,13 @@ defmodule PharosWeb.SearchControllerTest do
     assert conn.status == 302
   end
 
-  test "GET /search displays previous search", %{conn: conn} do
-    post conn, "/search", topic: "a-title", amount: "3"
+  test "GET /search displays previous search results", %{conn: conn} do
+    search_result = %Wikipedia.Result{title: "a-topic", description: "a-description", link: "a-link", source: :wikipedia}
+    MemoryDb.store("a-topic", [search_result])
+
     conn = get conn, "/search"
 
-    assert html_response(conn, 200) =~ "<strong>Topic:"
-    assert html_response(conn, 200) =~ "a-title"
+    assert html_response(conn, 200) =~ "a-topic"
   end
+
 end

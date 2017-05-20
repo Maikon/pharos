@@ -2,12 +2,8 @@ defmodule PharosWeb.SearchController do
   use PharosWeb.Web, :controller
 
   def index(conn, _params) do
-    results =
-      [
-        {"A-Topic", [%{title: "a-title", description: "a-description", link: "a-link", source: :twitter}]}
-      ]
-
-      render conn, "index.html", results: results
+    results = MemoryDb.all()
+    render conn, "index.html", results: results
   end
 
   def search(conn, query) do
@@ -19,7 +15,8 @@ defmodule PharosWeb.SearchController do
                fn(search_service) -> search_service.for_topic(query_params) end
              )
 
-    results = List.flatten(all_results)
-    redirect conn, to: search_path(conn, :index)
+      results = List.flatten(all_results)
+      MemoryDb.store(query_params[:topic], results)
+      redirect conn, to: search_path(conn, :index)
   end
 end
