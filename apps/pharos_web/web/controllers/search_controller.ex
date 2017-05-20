@@ -7,12 +7,19 @@ defmodule PharosWeb.SearchController do
         {"A-Topic", [%{title: "a-title", description: "a-description", link: "a-link", source: :twitter}]}
       ]
 
-    render conn, "index.html", results: results
+      render conn, "index.html", results: results
   end
 
   def search(conn, query) do
-    results = Twitter.Search.for_topic(query)
+    query_params = %{topic: query["topic"], amount: String.to_integer(query["amount"])}
 
+    all_results =
+      Enum.map(
+               [Wikipedia.Search, Twitter.Search],
+               fn(search_service) -> search_service.for_topic(query_params) end
+             )
+
+    results = List.flatten(all_results)
     redirect conn, to: search_path(conn, :index)
   end
 end

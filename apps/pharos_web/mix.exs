@@ -21,7 +21,7 @@ defmodule PharosWeb.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PharosWeb, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext, :post_service]]
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext, :post_service, :wikipedia, :twitter]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,6 +40,7 @@ defmodule PharosWeb.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:post_service, in_umbrella: true},
+      {:wikipedia, in_umbrella: true},
       {:twitter, in_umbrella: true}
     ]
   end
