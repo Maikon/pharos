@@ -2,12 +2,13 @@ defmodule PharosWeb.SearchController do
   use PharosWeb.Web, :controller
 
   def index(conn, _params) do
-    results = MemoryDb.all()
-    render conn, "index.html", results: results
+    render conn, "index.html", results: MemoryDb.all()
   end
 
   def search(conn, query) do
-    Core.RealSearch.execute(query)
+    search = Application.get_env(:pharos_web, :search)
+
+    search.execute(query)
 
     redirect conn, to: search_path(conn, :index)
   end

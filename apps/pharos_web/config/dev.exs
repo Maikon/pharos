@@ -7,6 +7,13 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 
+config :pharos_web, parent_node: :"pharos@127.0.0.1"
+config :pharos_web, children_nodes: [
+  {:"wiki@127.0.0.1", Wikipedia.Search}
+]
+
+config :pharos_web, search: Core.RealSearch
+
 config :pharos_web, PharosWeb.Endpoint,
   http: [port: 4040],
   debug_errors: true,
