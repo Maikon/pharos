@@ -47,3 +47,12 @@ release :pharos do
     twitter: :permanent
   ]
 end
+
+release :wikipedia do
+  set version: "0.1.0"
+  set vm_args: "/home/vagrant/pharos/apps/wikipedia/vm.args"
+  set applications: [
+    :runtime_tools,
+    wikipedia: :permanent
+  ]
+end
